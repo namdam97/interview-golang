@@ -17,20 +17,21 @@
 ##### Sự khác biệt lớn nhất giữa buffered channel và unbuffered channel đó là về capacity. Buffered channel sẽ yêu cầu khi báo capacity lúc khởi tạo channel, unbuffer channel thì không cần.
 
 
-### 3. Giải thích method và interface ? method trong golang khác gì với function
-### 4. Phân biệt Array, Slice, Map trong golang
-### 5. Pointer trong golang
-### 6. 
-### 7. Giải thích sự khác nhau giữa map và struct
-### 8. Race condition là gì ? Sự khác nhau giữa data race và race condition
-### 9. Deadlock là gì
+
+### 3. Tại sao dùng channel truyền data trong khi có thể implement truyền thẳng trên go func
+### 4. Nil channel để làm gì?
+### 5. Select trong golang
+### 6. Race condition là gì ? Sự khác nhau giữa data race và race condition
+### 7. Deadlock là gì
+### 8. Pointer trong golang
+### 9. Phân biệt Array, Slice, Map trong golang
 ### 10. GRPC là gì
 ### 11. Generics trong golang là gì
 ### 12. Defer trong go để làm gì 
-### 13. Select trong golang
+### 13. Các trường hợp memory leak
 ### 14. Khi nào sử dụng panic
 ### 15. Viết unit testing như thế nào
-### 16. Các trường hợp memory leak
+### 16. Giải thích method và interface ? method trong golang khác gì với function
 ### 17. Thiết kế chức năng graceful shutdown golang
 ### 18. Garbage collection 
 ### 19. Giải thích go runtime, go schedule 
@@ -38,9 +39,8 @@
 ### 21. Manual management heap như nào cho đỡ lâu
 ### 22. Golang có OOP không
 ### 23. Sự khác nhau giữa nil và empty slice
-### 24. Tại sao dùng channel truyền data trong khi có thể implement truyền thẳng trên go func
-### 25. Nil channel để làm gì?
-### 26. Tại sao dùng golang
-### 27. Phương pháp xử lý lỗi trong golang
+### 24. Giải thích sự khác nhau giữa map và struct
+### 25. Tại sao dùng golang
+### 26. Phương pháp xử lý lỗi trong golang
 
 
