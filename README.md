@@ -21,17 +21,31 @@
 ### 3. Tại sao dùng channel truyền data trong khi có thể implement truyền thẳng trên go func
 ### 4. Nil channel để làm gì?
 ### 5. Select trong golang
+#### - Select trong golang được sử dụng để chọn channel đã sẵn sàng, select sẽ block cho tới khi có case có thể được thực thi trên các channel
 ### 6. Race condition là gì ? Sự khác nhau giữa data race và race condition
+#### - Data race xảy ra khi có từ 2 goroutine trở lên cùng truy cập vào một vùng nhớ chung (shared resource) với ít nhất 1 goroutine thực hiện việc thay đổi giá trị trên vùng nhớ đó
+#### - Race condition là vấn đề sai sót về mặt thời gian hoặc thứ tự thực thi của các goroutine trong chương trình.
 ### 7. Deadlock là gì
+#### - Deadlock xảy ra khi một nhóm goroutines đang đợi nhau và không ai trong số đó có thể tiến hành. Ví dụ như các groutine đợi nhau hoặc deadlock xảy ra trong channel
 ### 8. Pointer trong golang
+#### - Con trỏ (Pointer) là một biến chứa địa chỉ bộ nhớ của biến khác.
 ### 9. Phân biệt Array, Slice, Map trong golang
-### 10. GRPC là gì
+#### - Array hay mảng là một tập hợp các phần tử có cùng kiểu dữ liệu nằm liên tiếp nhau, hay nói cách khác thì Array là một tập hợp có thứ tự, vì thế chúng ta có thể truy cập Array bằng chỉ số (index) của phần tử đó trong mảng.
+#### - Slice về bản chất là các tham chiếu đến mảng hiện có, nó mô tả một phần hoặc toàn bộ Array, vì thế nó có kích thước động (thay đổi được). Thông thường Slice sẽ được tạo từ 1 Array bằng cách lấy từ vị trí phần tử bắt đầu và kết thúc trên Array đó. Một slice gồm chiều dài, sức chứa và một con trỏ đến phần tử con của mảng .Độ dài của một slice chính là số lượng của các phần tử có trong slice đó, Sức chứa của slice là chỉ số lượng phần tử cơ bản bắt đầu từ mục mà slice đó được tạo ra
+#### - Map cũng là một kiểu dữ liệu tập hợp, tuy nhiên các phần tử trong nó không có thứ tự, tức là chúng ta không thể truy xuất đến phần tử trong Map bằng chỉ số như Slice hay Array. Map sẽ chứa các phần tử dạng key-value, từ đó việc truy xuất sẽ thực hiện qua các key.
+### 10. GRPC, GRPC Gateway là gì
+#### - GRPC là một khung dựa trên RPC framework (Remote Procedure Call). GRPC nên dùng để giao tiếp backend to backend. CPU không gánh nhiều cost cho encode/decoding mỗi đầu nữa. Tuy nhiên đặc tính mỗi đầu cần import file model chung (gen từ protobuf file) nên nếu update thì phải update đủ. Việc này vô tình tạo dependency cho các bên sử dụng, có thể nhiều bạn sẽ không thích điều này.
+#### - GRPC Gateway : là một công cụ mã nguồn mở được sử dụng để tạo ra một RESTful API từ một service gRPC, nó hoạt động như một reverse proxy để chuyển tiếp request từ client đến service gRPC
 ### 11. Generics trong golang là gì
 ### 12. Defer trong go để làm gì 
+#### - Defer nó cho phép một câu lệnh được gọi ra nhưng không thực thi ngay mà hoãn lại đến khi các lệnh xung quanh trả về kết quả. Các lệnh được gọi qua từ khóa defer sẽ được đưa vào một stack, tức là hoạt động theo cơ chế vào sau ra trước (last-in-first-out). Lệnh nào defer sau sẽ được thực thi trước, giống như xếp 1 chồng đĩa thì chiếc đĩa sau cùng (ở trên cùng) sẽ được lấy ra trước
 ### 13. Các trường hợp memory leak
 ### 14. Khi nào sử dụng panic
 ### 15. Viết unit testing như thế nào
 ### 16. Giải thích method và interface ? method trong golang khác gì với function
+#### - Interface trong Golang có 2 đặc điểm : Nó là 1 tập hợp các phương thức (methods), nhưng cũng là 1 kiểu
+#### - Methods (phương thức) – nó là một hàm(function) được khai báo cho riêng một kiểu dữ liệu đặc biệt được gọi là receiver.
+#### - Điểm khác cơ bản của methods so với function là việc khai báo receiver, từ đó cho phép khai báo trùng tên và chỉ cần khác kiểu dữ liệu nhận (receiver).
 ### 17. Thiết kế chức năng graceful shutdown golang
 ### 18. Garbage collection 
 ### 19. Giải thích go runtime, go schedule 
