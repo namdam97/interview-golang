@@ -52,9 +52,30 @@
 ### 20. Làm sao để monitor được RAM
 ### 21. Manual management heap như nào cho đỡ lâu
 ### 22. Golang có OOP không
+#### - Golang có OOP k ? câu trả lời là vừa có vừa không. Mặc dù Go có các kiểu và phương thức cho phép viết code theo kiểu lập trình hướng đối tượng, nhưng lại không có type phân cấp (tức là không có kế thừa). Ngoài ra trong Go còn có các cách để nhúng 1 loại dữ liệu này vào trong 1 kiểu dữ liệu khác
+#### - Cách go hướng đối tượng
+##### + Tính đóng gói : Go đóng gói mọi thứ ở cấp độ package. Với cách đặt tên  bắt đầu bằng một chữ cái viết thường thì chỉ truy cập được trong package đó (tức là private). Tên bắt đầu bằng chữ hoa sẽ là public
+##### + Tính kế thừa : Go cho phép nhúng 1 type vào 1 type khác.
+##### + Tính đa hình : Bản chất của đa hình của lập trình hướng đối tượng là khả năng xử lý các đối tượng thuộc các loại khác nhau miễn là chúng tuân thủ cùng một interface.
 ### 23. Sự khác nhau giữa nil và empty slice
 ### 24. Giải thích sự khác nhau giữa map và struct
 ### 25. Tại sao dùng golang
 ### 26. Phương pháp xử lý lỗi trong golang
+### 27. Nguyên lý SOLID
+### 28. 7 cấu trúc dữ liệu cơ bản
+#### - Mảng (Array)
+##### Mảng là một tập hợp các phần tử cùng kiểu dữ liệu được lưu trữ liên tiếp trong bộ nhớ và được truy cập thông qua chỉ số. Mảng giúp lưu trữ và quản lý dữ liệu theo cách có thứ tự
+#### - Danh sách liên kết (Linked list)
+##### Danh sách liên kết là cấu trúc dữ liệu mà mỗi phần tử gọi là nút chứa dữ liệu và một tham chiếu đến phần tử tiếp theo trong danh sách. Danh sách liên kết có thể là liên kết đơn hoặc liên kết kép
+#### - Ngăn xếp (Stack)
+##### Ngăn xếp là một cấu trúc dữ liệu dạng ngăn chứa, các phần tử được thêm và loại bỏ theo cơ chế "Last-In-First-Out" (LIFO). Phần tử cuối cùng được thêm vào ngăn sẽ được loại bỏ trước
+#### - Hàng đợi (Queue)
+##### Hàng đợi là một cấu trúc dữ liệu dạng ngăn chứa, các phần tử được thêm vào cuối và loại bỏ ở đầu theo cơ chế "First-In-First-Out" (FIFO). Phần tử đầu tiên được thêm vào hàng đợi sẽ được loại bỏ đầu tiên
+#### - Cây (Tree)
+##### Cây là một cấu trúc dữ liệu phân cấp bao gồm các nút có mối quan hệ cha-con. Cây thường được sử dụng để biểu diễn dữ liệu có cấu trúc phân cấp như cây gia phả hoặc cây thư mục trên máy tính
+#### - Đồ thị (Graph)
+##### Đồ thị là một cấu trúc dữ liệu bao gồm các đỉnh (node) và các cạnh (edge) để biểu diễn mối quan hệ giữa chúng. Đồ thị có nhiều ứng dụng, bao gồm mạng xã hội, mạng máy tính và tối ưu hóa đường đi
+#### - Hàm băm (Hash table)
+##### Hàm băm là một cấu trúc dữ liệu sử dụng hàm băm để ánh xạ khóa vào một giá trị trong bảng. Hàm băm giúp tìm kiếm và truy cập dữ liệu với thời gian độ phức tạp gần như là O(1)
 
 
