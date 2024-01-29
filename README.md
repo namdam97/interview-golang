@@ -94,13 +94,45 @@
 ##### Hàm băm là một cấu trúc dữ liệu sử dụng hàm băm để ánh xạ khóa vào một giá trị trong bảng. Hàm băm giúp tìm kiếm và truy cập dữ liệu với thời gian độ phức tạp gần như là O(1)
 
 ### 29. 5 thuật toán cơ bản
-## - Tree Algorithms (Thuật toán cây)
-### Tree Algorithms : là các thuật toán như cây nhị phân, cây tìm kiếm nhị phân, cây AVL. Các thuật toán cây giúp bạn tổ chức và truy xuất dữ liệu một cách hiệu quả trong cấu trúc dữ liệu cây
-## - Dynamic Programming Algorithms (Thuật toán quy hoạch động)
-### Dynamic Programing Algorithms : bao gồm các thuật toán như : Knapsack, Fibonacci và Longest Common Subsequence (LCS). Các thuật toán quy hoạch động giúp giải quyết các bài toán tối ưu hóa và phân tích các vấn đề phức tạp thành các vấn đề con nhỏ hơn
-## - Graph Algorithms (Thuật toán đồ thị)
-### - Graph Algorithms bao gồm thuật toán duyệt theo chiều rộng (BFS) và thuật toán duyệt theo chiều sâu (DFS). Các thuật toán này dùng để khám phá và tìm kiếm trong các đồ thị
-## - Search Algorithms (Thuật toán tìm kiếm)
-### Search Algorithms bao gồm thuật toán tìm kiếm nhị phân và tìm kiếm tuần tự. Các thuật toán này giúp bạn tìm kiếm một phần tử trong tập dữ liệu một cách nhanh chóng và hiệu quả
-## - Sorting Algorithms (Thuật toán sắp xếp)
-### Sorting Algorithms gồm các thuật toán như sắp xếp nổi bọt, sắp xếp chọn, sắp xếp chèn và QuickSort. Các thuật toán này giúp bạn sắp xếp dữ liệu một cách hiệu quả và tối ưu
+#### - Tree Algorithms (Thuật toán cây)
+##### Tree Algorithms : là các thuật toán như cây nhị phân, cây tìm kiếm nhị phân, cây AVL. Các thuật toán cây giúp bạn tổ chức và truy xuất dữ liệu một cách hiệu quả trong cấu trúc dữ liệu cây
+#### - Dynamic Programming Algorithms (Thuật toán quy hoạch động)
+##### Dynamic Programing Algorithms : bao gồm các thuật toán như : Knapsack, Fibonacci và Longest Common Subsequence (LCS). Các thuật toán quy hoạch động giúp giải quyết các bài toán tối ưu hóa và phân tích các vấn đề phức tạp thành các vấn đề con nhỏ hơn
+#### - Graph Algorithms (Thuật toán đồ thị)
+##### - Graph Algorithms bao gồm thuật toán duyệt theo chiều rộng (BFS) và thuật toán duyệt theo chiều sâu (DFS). Các thuật toán này dùng để khám phá và tìm kiếm trong các đồ thị
+#### - Search Algorithms (Thuật toán tìm kiếm)
+##### Search Algorithms bao gồm thuật toán tìm kiếm nhị phân và tìm kiếm tuần tự. Các thuật toán này giúp bạn tìm kiếm một phần tử trong tập dữ liệu một cách nhanh chóng và hiệu quả
+#### - Sorting Algorithms (Thuật toán sắp xếp)
+##### Sorting Algorithms gồm các thuật toán như sắp xếp nổi bọt, sắp xếp chọn, sắp xếp chèn và QuickSort. Các thuật toán này giúp bạn sắp xếp dữ liệu một cách hiệu quả và tối ưu
+
+### 30. Tối ưu truy vấn cơ sở dữ liệu
+#### 30.1 Giới hạn kết quả trả về
+##### - Chỉ trả về những trường được sử dụng (tránh sử dụng Select * ...). Hạn chế số bản ghi trả về.
+#### 30.2 Đánh chỉ mục (Index)
+##### - Chỉ mục là bảng tra cứu đặc biệt mà Database Search Engine có thể sử dụng để tăng thời gian và hiệu suất truy vấn dữ liệu. Một lưu ý nhỏ là: index làm tăng hiệu năng của lệnh SELECT nhưng lại làm giảm hiệu năng của lệnh INSERT, UPDATE và DELETE. Chỉ nên index những trường có kiểu dữ liệu số. Những kiểu dữ liệu khác nếu không phải là đặc biệt, hoặc ko phải tìm kiếm nhiều thì ko nên index.
+##### Ví dụ: bạn có bảng Users có trường Username là nvarchar(200). Trong ứng dụng việc truy vấn theo Username là rất nhiều nên bạn có thể đánh index cho trường Username đó.
+
+##### Các trường được index không nên thao tác với một số phép toán phủ định như: “IS NULL”, “!=”, “NOT”, “NOT IN”, “NOT LIKE”... Vì vậy một trường được tạo ra và được xác định index thì nên là khác NULL hoặc có giá trị mặc định.
+
+##### Hạn chế sử dụng phép toán so sánh 2 lần như “>=”, “<=” với những trường đánh index (bản chất của phép toán này là phép toán OR).
+
+#### 30.3 Sử dụng từ khoá Like phải hợp lý
+#### Khi sử dụng LIKE, không nên sử dụng ký tự %, * đặt ở phía trước giá trị tìm kiếm.
+
+#### 30.4 Không nên sử dụng hàm thao tác trực tiếp đến các column
+
+#### 30.5 Sử dụng từ khoá UNION vs UNION ALL phải hợp lý
+##### Nếu chúng ta xác định việc hợp dữ liệu giữa các nguồn với nhau mà không có bản ghi trùng thì việc sử dụng UNION sẽ không hợp lý.Trong trường hợp này, bạn nên sử dụng UNION ALL.
+
+#### 30.6 Hạn chế sử dụng Distinct, Order By
+##### Hạn chế sử dụng 2 từ khóa này. Hai thao tác này chiếm phần lớn thời gian truy vấn vì phải thực hiện lọc bản ghi trùng và sắp xếp các bản ghi.
+
+#### 30.7 EXISTS vs COUNT; IN vs EXISTS và IN vs BETWEEN
+##### Khi bạn muốn xác định một bản ghi có tồn tại không hãy chọn EXISTS thay vì COUNT hoặc IN.
+##### Giữa IN và BETWEEN hãy chọn BETWEEN.
+
+#### 30.8 Replication Master-Slave
+##### Replication là một quá trình cho phép bạn dễ dàng duy trì nhiều bản sao của dữ liệu MySQL bằng cách cho họ sao chép tự động từ một master tạo ra một cơ sở dữ liệu slave
+
+
+
