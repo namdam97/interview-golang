@@ -102,8 +102,14 @@
 ##### - Graph Algorithms bao gồm thuật toán duyệt theo chiều rộng (BFS) và thuật toán duyệt theo chiều sâu (DFS). Các thuật toán này dùng để khám phá và tìm kiếm trong các đồ thị
 #### - Search Algorithms (Thuật toán tìm kiếm)
 ##### Search Algorithms bao gồm thuật toán tìm kiếm nhị phân và tìm kiếm tuần tự. Các thuật toán này giúp bạn tìm kiếm một phần tử trong tập dữ liệu một cách nhanh chóng và hiệu quả
+##### Binary search : tìm kiếm nhị phân là một thuật toán tìm kiếm được sử dụng trong một mảng đã được sắp xếp bằng cách chia đôi mảng cần tìm kiếm nhiều lần .
+##### Chúng ta chia đôi mảng và gọi 2 phần chia đôi đó là left và right
+##### Phần tử đứng ở giữa left và Right được gọi là Mid
+##### Chúng ta sẽ dựa vào Mid để tìm xem giá trị chúng ta cần tìm nó nằm trên mảng left hay right
+##### Nếu giá trị cần tìm nằm ở trên left thì chúng ta sẽ loại bỏ mảng right và chỉ thực hiện tìm kiếm trên left và ngược lại!
 #### - Sorting Algorithms (Thuật toán sắp xếp)
 ##### Sorting Algorithms gồm các thuật toán như sắp xếp nổi bọt, sắp xếp chọn, sắp xếp chèn và QuickSort. Các thuật toán này giúp bạn sắp xếp dữ liệu một cách hiệu quả và tối ưu
+##### Quick Sort (Thuật toán sắp xếp nhanh) : chúng ta có thể chia dữ liệu ra thành 2 danh sách, rồi so sánh từng phần tử của danh sách với một phần tử được chọn (gọi là phần tử chốt) và mục đích của chúng ta là đưa phần tử chốt về đúng vị trí của nó.
 
 ### 30. Tối ưu truy vấn cơ sở dữ liệu
 #### 30.1 Giới hạn kết quả trả về
