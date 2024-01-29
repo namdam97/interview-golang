@@ -93,4 +93,14 @@
 #### - Hàm băm (Hash table)
 ##### Hàm băm là một cấu trúc dữ liệu sử dụng hàm băm để ánh xạ khóa vào một giá trị trong bảng. Hàm băm giúp tìm kiếm và truy cập dữ liệu với thời gian độ phức tạp gần như là O(1)
 
-
+### 29. 5 thuật toán cơ bản
+## - Tree Algorithms (Thuật toán cây)
+### Tree Algorithms : là các thuật toán như cây nhị phân, cây tìm kiếm nhị phân, cây AVL. Các thuật toán cây giúp bạn tổ chức và truy xuất dữ liệu một cách hiệu quả trong cấu trúc dữ liệu cây
+## - Dynamic Programming Algorithms (Thuật toán quy hoạch động)
+### Dynamic Programing Algorithms : bao gồm các thuật toán như : Knapsack, Fibonacci và Longest Common Subsequence (LCS). Các thuật toán quy hoạch động giúp giải quyết các bài toán tối ưu hóa và phân tích các vấn đề phức tạp thành các vấn đề con nhỏ hơn
+## - Graph Algorithms (Thuật toán đồ thị)
+### - Graph Algorithms bao gồm thuật toán duyệt theo chiều rộng (BFS) và thuật toán duyệt theo chiều sâu (DFS). Các thuật toán này dùng để khám phá và tìm kiếm trong các đồ thị
+## - Search Algorithms (Thuật toán tìm kiếm)
+### Search Algorithms bao gồm thuật toán tìm kiếm nhị phân và tìm kiếm tuần tự. Các thuật toán này giúp bạn tìm kiếm một phần tử trong tập dữ liệu một cách nhanh chóng và hiệu quả
+## - Sorting Algorithms (Thuật toán sắp xếp)
+### Sorting Algorithms gồm các thuật toán như sắp xếp nổi bọt, sắp xếp chọn, sắp xếp chèn và QuickSort. Các thuật toán này giúp bạn sắp xếp dữ liệu một cách hiệu quả và tối ưu
