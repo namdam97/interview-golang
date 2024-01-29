@@ -62,6 +62,21 @@
 ### 25. Tại sao dùng golang
 ### 26. Phương pháp xử lý lỗi trong golang
 ### 27. Nguyên lý SOLID
+## - Single Responsibility Principle (SRP)
+### + Một class chỉ nên giữ một trách nhiệm duy nhất
+### + Chỉ nên có 1 và 1 lý do để thay đổi class
+## - Open-Closed Principle (OCP)
+### + Không được sửa đổi 1 class có sẵn
+### + Chỉ có thể mở rộng bằng tính kế thừa
+## - Liskov Substitution Principle (LSP)
+### + Bất cứ class cha nào đều có thể thay thế bằng 1 class con
+### + Điều đó không làm ảnh hưởng đến chương trình
+## - Interface Segregation Principle (ISP)
+### + Thay vì dùng 1 interface lớn, ta nên tách thành nhiều interface nhỏ
+### + Mỗi interface nhỏ sẽ mang 1 mục đích cụ thể
+## - Dependency Inversion Principle (DIP)
+### + Các module cấp cao không nên phụ thuộc vào các module cấp thấp. Cả 2 nên phụ thuộc vào abstraction
+### + Interface (abstraction) không nên phụ thuộc vào gì đó cụ thể , mà nên ngược lại
 ### 28. 7 cấu trúc dữ liệu cơ bản
 #### - Mảng (Array)
 ##### Mảng là một tập hợp các phần tử cùng kiểu dữ liệu được lưu trữ liên tiếp trong bộ nhớ và được truy cập thông qua chỉ số. Mảng giúp lưu trữ và quản lý dữ liệu theo cách có thứ tự
