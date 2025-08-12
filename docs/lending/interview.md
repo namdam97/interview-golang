@@ -1,33 +1,86 @@
-## 🎯 **Hệ Thống Lending Tích Hợp Đa Đối Tác**
+# 🎯 Hệ Thống Lending Tích Hợp Đa Đối Tác
 
-### **Mục đích và bối cảnh dự án**
+## 📋 Tổng quan dự án
 
-Khi tôi tham gia dự án này, KiotViet đang đối mặt với một thách thức lớn: làm thế nào để kết nối hàng nghìn merchant với nhiều đối tác tài chính khác nhau một cách hiệu quả. Trước đây, mỗi khi merchant cần vay vốn, họ phải tự tìm hiểu và liên hệ từng ngân hàng riêng lẻ (công ty tài chính) - một quy trình phức tạp, tốn thời gian và không hiệu quả.
+### Mục đích và bối cảnh
 
-**Vấn đề cốt lõi được giải quyết:**
-- Tiểu thương khó tiếp cận vốn ngân hàng do thủ tục phức tạp
-- Mỗi ngân hàng có quy trình khác nhau, merchant phải làm nhiều lần
-- Thiếu hệ thống đánh giá tín dụng thông minh dựa trên dữ liệu kinh doanh thực tế
+Khi tôi tham gia dự án này, chúng tôi đang đối mặt với một thách thức lớn: làm thế nào để kết nối hàng nghìn merchant với nhiều đối tác tài chính khác nhau một cách hiệu quả. Trước đây, mỗi khi merchant cần vay vốn, họ phải tự tìm hiểu và liên hệ từng ngân hàng riêng lẻ (công ty tài chính) - một quy trình phức tạp, tốn thời gian và không hiệu quả.
 
-### **🔥 Những thách thức kỹ thuật phức tạp đã giải quyết**
+### Vấn đề cốt lõi được giải quyết
 
-#### **1. Multi-Bank Integration Challenge**
-Tích hợp với ngân hàng (VPBank, MBBank), công ty tài chính (tinvay) - mỗi bên có:
-- API format khác nhau
-- Quy trình approval khác nhau  
-- Yêu cầu security khác nhau
-Đồng bộ dữ liệu giữa nhiều systems:
-- CMS → CRM/BI → Partner
+- ❌ **Tiếp cận vốn khó khăn:** Tiểu thương khó tiếp cận vốn ngân hàng do thủ tục phức tạp
+- ❌ **Quy trình phân mảnh:** Mỗi ngân hàng có quy trình khác nhau, merchant phải làm nhiều lần
+- ❌ **Đánh giá tín dụng lạc hậu:** Thiếu hệ thống đánh giá tín dụng thông minh dựa trên dữ liệu kinh doanh thực tế
 
-#### **2. Bảo Mật Dữ Liệu Nhạy Cảm**
-"Hệ thống xử lý thông tin tài chính cực kỳ nhạy cảm - CMND, thông tin thu nhập, tài sản. Một lỗ hổng bảo mật có thể gây thiệt hại nghiêm trọng"
+### Giải pháp đưa ra
 
-### **💡 Những kỹ năng và công nghệ học được**
+- ✅ **Nền tảng tập trung:** Một portal duy nhất để merchant tiếp cận nhiều đối tác tài chính
+- ✅ **Quy trình tự động:** Tự động matching merchant với đối tác phù hợp
+- ✅ **Credit scoring thông minh:** Sử dụng dữ liệu transaction history để đánh giá tín dụng
 
-**Tech Stack hiện đại:**
-- **Backend:** Gin Framework, MongoDB, Redis, Clean Architecture với Dependency Injection
-- **Observability:** Grafana, Prometheus, Loki
-- **Security:** JWT, RSA/AES, DES encryption, OAuth2
-- **Integration:** REST APIs
-- **Infrastructure:** Redis caching, SFTP, MinIO
-- **Message Queue:** taskq PubSub
+## 🔥 Thách thức kỹ thuật phức tạp
+
+### 1. Multi-Bank Integration Challenge
+
+**Vấn đề:** Tích hợp với ngân hàng, công ty tài chính - mỗi bên có:
+- 📋 Quy trình approval khác nhau
+- 🔒 Yêu cầu security khác nhau (OAuth2, API keys, certificates)
+
+**Đồng bộ dữ liệu giữa nhiều systems:**
+```
+CMS → CRM/BI → Partner Systems
+```
+
+### 2. Bảo mật dữ liệu nhạy cảm
+
+**Vấn đề:** 
+> "Hệ thống xử lý thông tin tài chính cực kỳ nhạy cảm - CMND, thông tin thu nhập, tài sản. Một lỗ hổng bảo mật có thể gây thiệt hại nghiêm trọng"
+
+**Giải pháp bảo mật đa lớp:**
+des, rsa
+
+### Backend Technology Stack
+
+```yaml
+Language: Go (Golang)
+Framework: Gin (HTTP router)
+Database: MongoDB (document store)
+Cache: Redis (in-memory)
+Message Queue: TaskQ PubSub
+File Storage: MinIO (S3-compatible)
+```
+
+### Architecture Patterns
+
+- **Clean Architecture:** Dependency Injection cho testability
+- **Microservices:** Loosely coupled services
+
+### Security Implementation
+
+```yaml
+Authentication: JWT tokens với refresh mechanism
+Authorization: OAuth2 + RBAC
+Encryption: 
+  - Symmetric: AES-256-GCM
+  - Asymmetric: RSA-4096
+  - Legacy support: DES (cho integration cũ)
+API Security: Rate limiting + input validation
+```
+
+### Observability Stack
+
+```yaml
+Metrics: Prometheus + Grafana dashboards
+Logging: Loki với structured logging
+Tracing: Distributed tracing cho debugging
+Alerting: PagerDuty integration
+```
+
+### Integration Layer
+
+```yaml
+Protocols: REST APIs, SFTP for file transfer
+Data Formats: JSON, XML, CSV
+Partner APIs: Standardized adapter pattern
+Webhooks: Event notifications cho partners
+```
